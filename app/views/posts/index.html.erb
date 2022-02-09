@@ -7,4 +7,5 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= link_to 'Delete', post, :method => :delete %>
 <% end %>
