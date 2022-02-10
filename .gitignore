@@ -24,3 +24,5 @@
 
 # Ignore this file 
 coverage/*
+
+.DS_Store

@@ -1,3 +1,6 @@
+<% if @user %>
+    Logged in as: <%= @user.email %><br>
+
 <% if !session['user_id'] %>
   <%= button_to sign_up_path, method: :get do %>
     Sign up
@@ -8,6 +11,10 @@
     Log in
   <% end %>
 
+  <%= button_to logout_path, method: :delete do %>
+    Log out
+  <% end %>  
+
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
@@ -16,3 +23,6 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<% end %>
+
