@@ -1,4 +1,8 @@
 class RegistrationsController < ApplicationController
+  def new
+    @user = User.new # How does this work?
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -7,10 +11,6 @@ class RegistrationsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @user = User.new # How does this work?
   end
 
   private
