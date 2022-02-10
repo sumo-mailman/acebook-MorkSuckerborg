@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @user = User.find_by(id: session['user_id'])
-    console
   end
 
   private

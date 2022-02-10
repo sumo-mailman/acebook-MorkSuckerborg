@@ -19,8 +19,8 @@ feature 'Log in' do
     # User.create(name: 'Mat', email: 'matt@g.com', password: '12345')
     click_button 'Log in'
     p 'After click log in:', current_path
-    fill_in "email", with: 'matt@g.com'
-    fill_in "password", with: '12345'
+    fill_in "email", with: 'matt@matt.com'
+    fill_in "password", with: 'Abc123'
     click_button 'Log in'
     p 'AFTER AFTER click log in:', current_path
     expect(current_path).to eq '/'
