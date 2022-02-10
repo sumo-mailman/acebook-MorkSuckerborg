@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
   get 'sessions/destroy'
   get 'registrations/create'
   get 'registrations/new'

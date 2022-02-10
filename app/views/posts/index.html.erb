@@ -1,6 +1,12 @@
-<%= button_to sign_up_path, method: :get do %>
-  Sign up
+<% if !session['user_id'] %>
+  <%= button_to sign_up_path, method: :get do %>
+    Sign up
+  <% end %>
 <% end %>
+
+  <%= button_to login_path, method: :get do %>
+    Log in
+  <% end %>
 
 
 <% @posts.each do |post| %>
