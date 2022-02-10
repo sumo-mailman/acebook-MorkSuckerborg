@@ -24,3 +24,7 @@
 
 # Ignore this file 
 coverage/*
+
+# Ignore local cache of Rubocop remote config
+.rubocop-*
+
