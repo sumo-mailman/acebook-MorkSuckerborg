@@ -6,11 +6,12 @@ feature 'Sign up' do
     
     
     click_button "Sign up"
+    expect(page).to have_content 'Registrations#new'
     # user takes name, email, password
-    fill_in "name", with: "Mat"
-    fill_in "email", with: "matt@matt.com"
-    fill_in "password", with: "Abc123"
-    click_button "Sign up"
+    fill_in "Name", with: "Mat"
+    fill_in "Email", with: "matt@matt.com"
+    fill_in "Password", with: "Abc123"
+    find('input[name="commit"]').click
     expect(page).to have_content 'User created successfully'
     expect(page).not_to have_button 'Sign up'
     expect(page).not_to have_button 'Log out'
