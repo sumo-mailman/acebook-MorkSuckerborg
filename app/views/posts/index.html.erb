@@ -1,20 +1,20 @@
 <% if @user %>
+    <!-- HERE we wanna see everything when user is logged in-->
     Logged in as: <%= @user.email %><br>
-
-<% if !session['user_id'] %>
-  <%= button_to sign_up_path, method: :get do %>
-    Sign up
-  <% end %>
-<% end %>
-
-  <%= button_to login_path, method: :get do %>
-    Log in
-  <% end %>
-
   <%= button_to logout_path, method: :delete do %>
     Log out
   <% end %>  
+<% end %>
 
+<% if !session['user_id'] %>
+  <!-- HERE we wanna see everything when user is logged out-->
+  <%= button_to sign_up_path, method: :get do %>
+    Sign up
+  <% end %>
+  <%= button_to login_path, method: :get do %>
+    Log in
+  <% end %>
+<% end %>
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
@@ -24,5 +24,5 @@
   New post
 <% end %>
 
-<% end %>
+
 
