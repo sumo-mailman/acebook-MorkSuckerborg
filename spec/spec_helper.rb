@@ -28,8 +28,16 @@ SimpleCov.start 'rails'
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
+RSpec.configure do |config|
+  config.before(:each) do
+    t = Time.local(1999, 12, 31, 23, 59, 0)
+    Timecop.travel(t)
+  end
+end
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

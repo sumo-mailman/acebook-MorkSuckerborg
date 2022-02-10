@@ -6,6 +6,9 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <%= link_to 'Delete', post, :method => :delete %>
+  <div class='post'> 
+    <p><%= post.message %></p>
+    <p><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
+    <%= link_to 'Delete', post, :method => :delete %>
+  </div>
 <% end %>
