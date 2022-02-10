@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
+    console
     user = User.find_by(email: params[:email])
     # finds existing user, checks to see if user can be authenticated
     if user.present? && user.authenticate(params[:password])
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+  
 
   def destroy
     session[:user_id] = nil 

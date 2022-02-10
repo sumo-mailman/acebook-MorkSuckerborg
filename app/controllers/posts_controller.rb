@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     # @session = session['user_id']
-    console
   end
 
   private
