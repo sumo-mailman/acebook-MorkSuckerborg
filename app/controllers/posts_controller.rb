@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def create
-    @post = Post.create(post_params)
+    user = User.find_by(id: session['user_id'])
+    user.posts.create(post_params)
     redirect_to posts_url
   end
 
@@ -21,7 +22,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    console
     @post = Post.find(params[:id])
   end
 
@@ -34,6 +34,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
