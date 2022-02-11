@@ -19,6 +19,17 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def edit
+    console
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(params.require(:post).permit(:message))
+    redirect_to posts_url
+  end 
+
   private
 
   def post_params
