@@ -3,22 +3,22 @@ require 'rails_helper'
 RSpec.describe "Sessions", type: :request do
   describe "GET /new" do
     it "returns http success" do
-      get "/sessions/new"
+      get "/login"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /create" do
+  describe "POST /create" do
     it "returns http success" do
-      get "/sessions/create"
+      post "/login"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /destroy" do
+  describe "DELETE /destroy" do
     it "returns http success" do
-      get "/sessions/destroy"
-      expect(response).to have_http_status(:success)
+      delete "/logout"
+      expect(response).to have_http_status(302)
     end
   end
 
