@@ -10,7 +10,7 @@ feature 'Log in' do
     fill_in "email", with: 'matt@matt.com'
     fill_in "password", with: 'Abc123'
     find("input[type=submit][value='Login']").click
-    
+
     expect(current_path).to eq '/'
     expect(page).to have_content 'Logged in successfully'
     expect(page).not_to have_button 'Sign up'
