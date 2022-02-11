@@ -35,6 +35,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4'
+  gem 'rubocop', '1.20'
 end
 
 group :development do
@@ -46,6 +47,7 @@ end
 group :test do
   gem 'simplecov'
   gem 'simplecov-console'
+  gem 'timecop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

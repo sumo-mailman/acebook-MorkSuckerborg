@@ -16,13 +16,20 @@
   <% end %>
 <% end %>
 
+<div class='enter-post'>    
+  <%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_field :message, placeholder: "What's on your mind?" %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <a href=<%="/posts/#{post.id}/"%>>
+   <div class='post'>
+     <p class='post-user'>Namey McName</p>
+     <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
+     <p class='post-message'><%= post.message %></p>
+   </div>
+ </a>
 <% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
-
-

@@ -25,5 +25,10 @@
 # Ignore this file 
 coverage/*
 
+
 .DS_Store
 notes.md
+
+# Ignore local cache of Rubocop remote config
+.rubocop-*
+

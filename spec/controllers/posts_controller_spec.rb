@@ -1,15 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
-    it "responds with 200" do
-      get :new
-      expect(response).to have_http_status(200)
-    end
-  end
-
   describe "POST /" do
-    it "responds with 200" do
+    it "redirects to the posts url" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
@@ -24,6 +17,21 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       get :index
       expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "DELETE /" do
+    it "redirects to the posts url" do
+      post = Post.create(message: "Hello, World!")
+      delete :destroy, params: { id: post.id }
+      expect(response).to redirect_to(posts_url)
+    end
+
+    it "deletes a post" do
+      post = Post.create(message: "Hello, World!")
+      delete :destroy, params: { id: post.id }
+
+      expect(Post.exists?(post.id)).to be false
     end
   end
 end
