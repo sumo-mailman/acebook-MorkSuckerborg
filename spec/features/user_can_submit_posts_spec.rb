@@ -7,6 +7,5 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("31 Dec 1999 at 23:59")
-
   end
 end

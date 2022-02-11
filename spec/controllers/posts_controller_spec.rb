@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
-    it "responds with 200" do
-      get :new
-      expect(response).to have_http_status(200)
-    end
-  end
-
   describe "POST /" do
     it "redirects to the posts url" do
       post :create, params: { post: { message: "Hello, world!" } }
