@@ -6,7 +6,7 @@ RSpec.describe "Registrations", type: :request do
       get "/sign_up"
       expect(response).to have_http_status(:ok)
   
-      post "/sign_up", :params => { :user => {:name => "Mat", email: 'matt@matt.com', password: 'Abc1234'} }
+      post "/sign_up", :params => { :user => { :name => "Mat", email: 'matt@matt.com', password: 'Abc1234' } }
       expect(response).to have_http_status(302)
   
       follow_redirect!
@@ -28,5 +28,4 @@ RSpec.describe "Registrations", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
 end

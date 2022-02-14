@@ -20,6 +20,7 @@ feature 'Sign up' do
 
   end
 
+
   scenario "user can't sign up with an existing email" do #still not implemented
     visit "/"
     click_button "Sign up"
