@@ -5,4 +5,8 @@
   <%= link_to 'Edit', edit_post_path %>
 </div>
 
+<% if flash[:post_delete_success] %>
+      <div class="alert alert-success"><%= flash[:success] %></div>
+    <% end %>
+
 
