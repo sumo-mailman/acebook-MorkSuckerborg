@@ -18,7 +18,3 @@ feature 'Log out' do
     expect(page).not_to have_button "Log out"
   end
 end 
-
-
-
-

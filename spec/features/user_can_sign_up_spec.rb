@@ -20,7 +20,7 @@ feature 'Sign up' do
 
   end
 
-  xscenario 'user signs up with an existing email' do #still not implemented
+  xscenario 'user signs up with an existing email' do # still not implemented
     visit "/"
     click_button "Sign up"
     expect(page).to have_content 'Registrations#new'
@@ -42,5 +42,4 @@ feature 'Sign up' do
     expect(page).to have_content 
 
   end
-
 end

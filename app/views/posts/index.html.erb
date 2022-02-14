@@ -26,11 +26,12 @@
 </div>
 
 <% @posts.each do |post| %>
-  <a href=<%="/posts/#{post.id}/"%>>
-   <div class='post'>
-     <p class='post-user'>Namey McName</p>
-     <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-     <p class='post-message'><%= post.message %></p>
-   </div>
- </a>
+  <%= link_to post do %>
+    <div class='post'>
+      <p class='post-user'><%= post.user.name if post.user %></p>
+      <p class='post-user'><%= "Namey McNamerson" unless post.user %></p>
+      <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
+      <p class='post-message'><%= post.message %></p>
+    </div>
+  <% end %>
 <% end %>
