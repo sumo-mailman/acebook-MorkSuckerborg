@@ -1,12 +1,10 @@
 <div class='post'> 
   <p class='post-message'><%= @post.message %></p>
   <p class='post-time'><%= @post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-  <%= link_to 'Delete', @post, :method => :delete %>
+  <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete %>
   <%= link_to 'Edit', edit_post_path %>
 </div>
 
-<% if flash[:post_delete_success] %>
-      <div class="alert alert-success"><%= flash[:success] %></div>
-    <% end %>
+
 
 
