@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can edit posts" do
-    sign_up
+    user_sign_up_and_log_in
     submit_post
     click_link 
     click_link "Edit"
@@ -13,16 +13,6 @@ RSpec.feature "Timeline", type: :feature do
   end
 end
 
-def sign_up
-  visit "/users/sign_up"
-  fill_in "Name", with: "Bob Bam"
-  fill_in "Email", with: "bob@example.com"
-  fill_in "Password", with: "Banana123"
-  fill_in "Password", with: "Banana123"
-  click_button "Sign up"
-end
 
-def submit_post
-  fill_in "Message", with: "Hello, world!"
-  click_button "Submit"
-end
+
+
