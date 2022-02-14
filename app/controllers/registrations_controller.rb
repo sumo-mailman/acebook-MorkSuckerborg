@@ -9,6 +9,7 @@ class RegistrationsController < ApplicationController
       session[:user_id] = @user.id #Do we need to use @ here??
       redirect_to root_path, notice: 'User created successfully'
     else
+      flash.now[:alert] = 'Invalid email or password. Password must be between 6 and 10 characters'
       render :new
     end
   end
