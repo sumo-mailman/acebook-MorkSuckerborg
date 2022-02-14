@@ -13,8 +13,9 @@ feature 'Log out' do
 
     click_button "Log Out"
 
-    expect(page).to have_content "Signed out successfully"
-    expect(page).to have_button "Sign up"
+    #replace bottom test with specific sign out message from yml
+    expect(page).to have_content "You need to sign in or sign up before continuing"
+    expect(page).to have_link "Sign up"
     expect(page).to have_button "Log in"
     expect(page).not_to have_button "Log Out"
   end
