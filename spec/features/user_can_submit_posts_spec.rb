@@ -21,7 +21,7 @@ RSpec.feature "Timeline", type: :feature do
 end
 
 def sign_up
-  visit "/sign_up"
+  visit "/users/sign_up"
   fill_in "Name", with: "Bob Bam"
   fill_in "Email", with: "bob@example.com"
   fill_in "Password", with: "Banana123"
