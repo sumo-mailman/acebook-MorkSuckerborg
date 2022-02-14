@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+  body {
+    margin: 0px;
+  }
+
+ .navbar {
+  background-color: blue;
+  padding: 20px;
+  color: antiquewhite;
+ }
+
+ .navbar a {
+   color: antiquewhite;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: xx-large;
+   text-decoration: none;
+ }
+ 

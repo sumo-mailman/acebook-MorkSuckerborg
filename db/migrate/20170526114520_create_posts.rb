@@ -5,7 +5,5 @@ class CreatePosts < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-
-    add_reference :posts, :user
   end
 end 

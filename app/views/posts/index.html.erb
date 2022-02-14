@@ -1,25 +1,7 @@
-<% if @user %>
-    <!-- HERE we wanna see everything when user is logged in-->
-    Logged in as: <%= @user.email %><br>
-  <%= button_to logout_path, method: :delete do %>
-    Log out
-  <% end %>  
-<% end %>
-
-<% if !session['user_id'] %>
-  <!-- HERE we wanna see everything when user is logged out-->
-  <%= button_to sign_up_path, method: :get do %>
-    Sign up
-  <% end %>
-  <%= button_to login_path, method: :get do %>
-    Log in
-  <% end %>
-<% end %>
-
 <div class='enter-post'>    
   <%= form_for @post do |form| %>
     <%= form.label :message %>
-    <%= form.hidden_field :user_id, value: session['user_id'] %>
+
     <%= form.text_field :message, placeholder: "What's on your mind?" %>
     <%= form.submit "Submit" %>
   <% end %>
