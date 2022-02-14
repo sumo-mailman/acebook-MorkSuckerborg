@@ -16,7 +16,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "User sees the post creator" do
     user_sign_up_and_log_in
     submit_post
-    expect(page).to have_content("Bob Bam")
+    expect(page).to have_content("Josh")
   end
 end
 
