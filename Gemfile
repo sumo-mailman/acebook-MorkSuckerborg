@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry', require: false
+gem 'bundle-audit'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
