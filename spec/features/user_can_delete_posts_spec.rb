@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can delete posts" do
-    user_sign_up_and_log_in
+    sign_up_log_in
     
     fill_in "post_message", with: "Hello, world!"
     click_button 'Submit'
@@ -15,5 +15,3 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Post successfully deleted")
   end
 end
-
-
