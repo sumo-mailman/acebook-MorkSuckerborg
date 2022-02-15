@@ -4,6 +4,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def purge_image 
+    @post = Post.find(params[:id])
+    @post.image.purge
+    redirect_back fallback_location: root_path, notice: "Image deleted succesfully"
+  end
+
   def index
     @post = Post.new
     @posts = Post.order('created_at DESC')
@@ -32,6 +38,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :image)
   end
 end

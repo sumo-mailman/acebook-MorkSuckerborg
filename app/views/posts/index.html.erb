@@ -1,5 +1,7 @@
 <div class='enter-post'>    
   <%= form_for @post do |form| %>
+    <%= form.label :image %>
+    <%= form.file_field :image, class: "post-image", id: "post-image", accept: "image/png, image/jpeg" %>
     <%= form.label :message %>
 
     <%= form.text_field :message, placeholder: "What's on your mind?" %>
@@ -7,13 +9,14 @@
   <% end %>
 </div>
 
-<% @posts.each do |post| %>
+<% @posts.each_with_index do |post, index| %>
   <%= link_to post do %>
     <div class='post'>
       <p class='post-user'><%= post.user.name if post.user %></p>
-      <p class='post-user'><%= "Namey McNamerson" unless post.user %></p>
-      <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-      <p class='post-message'><%= post.message %></p>
+      <p class='post-user' id="post-user-<%= index %>" ><%= "Namey McNamerson" unless post.user %></p>
+      <p class='post-time' id="post-time-<%= index %>" ><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
+      <%= image_tag(post.image, id: "post-image-#{index}", style: "width: 50%;") if post.image.attached? %>
+      <p class='post-message', id="post-message-<%= index %>"><%= post.message %></p>
     </div>
   <% end %>
 <% end %>
