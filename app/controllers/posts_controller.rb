@@ -5,6 +5,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def purge_image 
+    @post = Post.find(params[:id])
+    @post.image.purge
+    redirect_back fallback_location: root_path, notice: "Image deleted succesfully"
+  end
+
   def index
     @user = User.find_by(id: session['user_id'])
     @post = Post.new
