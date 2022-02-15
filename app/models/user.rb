@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  has_secure_password
-  has_many :posts 
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  validates :password, length: { minimum: 6, maximum: 10 }, on: :create
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, alert: 'Invalid email' }
+  has_many :posts
 end

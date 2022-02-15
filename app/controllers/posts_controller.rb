@@ -1,14 +1,12 @@
 class PostsController < ApplicationController
   def create
-    user = User.find_by(id: session['user_id'])
-    user.posts.create(post_params)
+    current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    @user = User.find_by(id: session['user_id'])
     @post = Post.new
-    @posts = Post.all.reverse
+    @posts = Post.order('created_at DESC')
   end
 
   def show
@@ -16,8 +14,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
+    post = Post.find(params[:id])
+    post.destroy
     redirect_to posts_url, notice: "Post successfully deleted"
   end
 
@@ -26,8 +24,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
+    post = Post.find(params[:id])
+    post.update(post_params)
     redirect_to posts_url, notice: "Post successfully edited"
   end 
 
