@@ -10,9 +10,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to_not have_content("Hello, world!")
     expect(page).to have_content("Edited message here!")
+    expect(page).to have_content("Post successfully edited")
   end
 end
-
-
-
 

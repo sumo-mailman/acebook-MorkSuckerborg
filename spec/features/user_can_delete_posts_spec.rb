@@ -11,7 +11,8 @@ RSpec.feature "Timeline", type: :feature do
     click_link 'Delete'
 
     expect(page).to_not have_content("Hello, world!")
-    
+    expect(page).to_not have_content("Bob Bam")
+    expect(page).to have_content("Post successfully deleted")
   end
 end
 

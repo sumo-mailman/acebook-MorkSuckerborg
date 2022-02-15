@@ -1,3 +1,11 @@
+def sign_up
+  visit "/sign_up"
+  fill_in "Name", with: "Bob Bam"
+  fill_in "Email", with: "bob@example.com"
+  fill_in "Password", with: "Banana123"
+  click_button "Sign Up"
+end
+
 def user_sign_up_and_log_in
   visit '/'
   click_link 'Sign up'
@@ -19,7 +27,7 @@ def user_sign_up_not_logged_in
   fill_in "Password confirmation", with: "password"
   click_button 'Sign up'
   click_button 'Log Out'
-end 
+end
 
 def submit_post
   fill_in "Message", with: "Hello, world!"
