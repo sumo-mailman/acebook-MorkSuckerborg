@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    console
     @user = User.find_by(id: session['user_id'])
     @post = Post.new
     @posts = Post.all.reverse
