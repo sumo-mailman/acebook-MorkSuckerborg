@@ -33,7 +33,7 @@
       <p class='post-user'><%= post.user.name if post.user %></p>
       <p class='post-user' id="post-user-<%= index %>" ><%= "Namey McNamerson" unless post.user %></p>
       <p class='post-time' id="post-time-<%= index %>" ><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-      <%= image.tag(post.image, id: "post-image-#{index}") %>
+      <%= image_tag(post.image, id: "post-image-#{index}") %>
       <p class='post-message', id="post-message-<%= index %>"><%= post.message %></p>
     </div>
   <% end %>

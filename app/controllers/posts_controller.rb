@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    console
     @user = User.find_by(id: session['user_id'])
     @post = Post.new
     @posts = Post.all.reverse
@@ -34,6 +35,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :image)
   end
 end
