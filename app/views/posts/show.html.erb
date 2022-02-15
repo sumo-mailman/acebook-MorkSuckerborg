@@ -2,8 +2,10 @@
   <p class='post-message'><%= @post.message %></p>
   <%= image_tag(@post.image, style: "width: 50%;") if @post.image.attached? %>
   <p class='post-time'><%= @post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-  <%= link_to 'Delete', @post, :method => :delete %>
+  <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete %>
   <%= link_to 'Edit', edit_post_path %>
 </div>
+
+
 
 
