@@ -8,6 +8,12 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::HTMLFormatter
 ])
 
+SimpleCov.add_filter([
+  'app/channels',
+  'app/jobs',
+  'app/mailers'
+  ])
+
 SimpleCov.start 'rails'
 
 # SimpleCov.formatter = SimpleCov::Formatter::Console
