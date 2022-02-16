@@ -1,3 +1,5 @@
+
+# Matts Code
 <div class='post'> 
   <p class='post-message'><%= @post.message %></p>
   <%= image_tag(@post.image, style: "width: 50%;") if @post.image.attached? %>
@@ -6,6 +8,21 @@
   <%= link_to 'Edit', edit_post_path %>
 </div>
 
+<h1> Show </h1>
+# Josh's Code 
 
+  <br>
+
+  <div class='container card' style="width: 50rem;">
+    <span class="p-3">
+      <div class="post-body">
+        <h5 class="post-title"><%= current_user.name %></h5>
+        <p class="post-text"><small class="text-muted">Posted on: <%= @post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
+        <p class="post-text"><%= @post.message %></p>
+        <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete %>
+        <%= link_to 'Edit', edit_post_path %>
+      </div>
+    </span>
+  </div>
 
 
