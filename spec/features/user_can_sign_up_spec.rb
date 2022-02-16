@@ -11,7 +11,7 @@ feature 'Sign up' do
     click_button 'Sign up'
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
-    expect(page).to have_button 'Log out'
+    expect(page.find('#main-navbar')).to have_link 'Log out'
     expect(page).not_to have_button 'Sign up'
     expect(page).not_to have_button 'Log in'
   end
@@ -20,7 +20,8 @@ feature 'Sign up' do
     User.create(name: 'Josh', email: 'Josh@gmail.com', password: 'password')
 
     visit "/"
-    click_link "Sign up"
+    sign_up_link = page.find('#sign-up-link')
+    sign_up_link.click
 
     fill_in "Name", with: "Josh"
     fill_in "Email", with: "Josh@gmail.com"

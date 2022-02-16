@@ -9,7 +9,8 @@ end
 
 def log_out
   visit '/'
-  click_button 'Log Out'
+  log_out_link = page.find('.log-out-link')
+  log_out_link.click
 end
 
 def submit_post(image: false)

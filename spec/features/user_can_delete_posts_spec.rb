@@ -7,11 +7,12 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "post_message", with: "Hello, world!"
     click_button 'Submit'
 
-    visit "/posts/#{Post.all.last.id}"
+    post_links = page.all('.post-link')
+    post_links.first.click
+
     click_link 'Delete'
 
-    expect(page).to_not have_content("Hello, world!")
-    expect(page).to_not have_content("Bob Bam")
+    expect(page.has_css?('.post')).to be false 
     expect(page).to have_content("Post successfully deleted")
   end
 end
