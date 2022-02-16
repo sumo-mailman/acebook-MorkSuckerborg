@@ -1,8 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <%= link_to root_path do %>
-      AceBook :]
-    <% end %>
+    <a class="navbar-brand" id="navbarLogo" href="/">Acebook :]</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div class="navbar-nav" id="navbarUserDetails">
+      <a class="nav-link" href="#"><%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %></a>
+      <a class="nav-link disabled"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></a>
+    </div>
+    
   </div>
 </nav>
-

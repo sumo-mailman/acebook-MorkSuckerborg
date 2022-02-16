@@ -25,16 +25,17 @@
     text-align:center;
   }
 
- .navbar a {
+ #navbarLogo {
    color: antiquewhite;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-   font-size: xx-large;
+   font-size: x-large;
    text-decoration: none;
  }
  
- .navbar-text {
+ #navbarUserDetails {
+  text-decoration: none;
   color: antiquewhite;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;
-  text-decoration: none; 
  }
+
