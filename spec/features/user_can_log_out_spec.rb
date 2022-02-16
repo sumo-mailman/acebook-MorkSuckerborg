@@ -3,11 +3,8 @@ require 'rails_helper'
 feature 'Log out' do
   scenario 'user logs out' do
     sign_up_log_in
-<<<<<<< HEAD
-    click_button "Log Out"
-=======
+
     click_link "Log out"
->>>>>>> main
 
     # replace bottom test with specific sign out message from yml
     expect(page).to have_content "You need to sign in or sign up before continuing"

@@ -18,7 +18,7 @@ RSpec.describe PostsController, type: :controller do
   describe "GET /" do
     pending it "responds with 200" do
       get :index
-      expect(response).to have_http_status(302)
+      expect(response).to have_http_status(200)
       # We are not logged in so it redirects us to the sign_up page
       # We wanna test whether we are redirected to root_path when we go to posts
       

@@ -7,8 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "post_message", with: "Hello, world!"
     click_button 'Submit'
 
-    post_links = page.all('.post-link')
-    post_links.first.click
+    click_link "0 Comments"
 
     click_link 'Delete'
 

@@ -13,16 +13,12 @@
 
   <div class="field">
     <%= form.label :content, 'Leave a comment' %>
+    <br>
     <%= form.text_area :content %>
   </div>
 
-  <div class="field">
-    <%= form.hidden_field :post_id, value: @post.id %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
     <%= form.submit %>
