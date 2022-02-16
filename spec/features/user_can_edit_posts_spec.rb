@@ -41,7 +41,7 @@ RSpec.feature "Timeline", type: :feature do
     post_links = page.all('.post-link')
     post_links[0].click
     click_link "Edit"
-    click_link 'Delete image'
+    click_link 'Delete ime'
     
     visit "/"
     posts = page.all(".post")
