@@ -951,10 +951,10 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@popperjs/core@2.0.0-alpha.1":
-  version "2.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.0-alpha.1.tgz#027e88eb5d890b87942b3188cdc99a50786ad854"
-  integrity sha512-AEw/mCzKVPweZMy6DAeLQT2xDUtoHWL4I2v2/091Yr3M6RL5v2I786/3Ln1W19eO5/FoimUUtI6L8CpAp06Txw==
+"@popperjs/core@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.0.tgz#a832f8da4c9547cb7afae92845bfb73563ba6b66"
+  integrity sha512-bN4670c4wr7RAOWTaf+h5KpC8al3h5fZSXqffakZrxZA01aKulM3rwIsU7qutrnYWw/nC1W06buOms/Rh+ZEDA==
 
 "@rails/webpacker@5.4.3":
   version "5.4.3"
@@ -1537,10 +1537,10 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@5.0.0-beta2:
-  version "5.0.0-beta2"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.0-beta2.tgz#ab1504a12807fa58e5e41408e35fcea42461e84b"
-  integrity sha512-e+uPbPHqTQWKyCX435uVlOmgH9tUt0xtjvyOC7knhKgOS643BrQKuTo+KecGpPV7qlmOyZgCfaM4xxPWtDEN/g==
+bootstrap@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.0.tgz#97635ac0e0d6cb466700ebf0fd266bfabf352ed2"
+  integrity sha512-tmhPET9B9qCl8dCofvHeiIhi49iBt0EehmIsziZib65k1erBW1rHhj2s/2JsuQh5Pq+xz2E9bEbzp9B7xHG+VA==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
