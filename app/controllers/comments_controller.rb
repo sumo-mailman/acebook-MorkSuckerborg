@@ -21,31 +21,31 @@ class CommentsController < ApplicationController
   end
 
   # PATCH/PUT /comments/1 or /comments/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @comment.update(comment_params)
-  #       format.html do
-  #         redirect_to post_path(id: @post.id), 
-  #         notice: "Comment was successfully updated." 
-  #       end
-  #     else
-  #       format.html { render :edit, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def update
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html do
+          redirect_to post_path(id: @post.id), 
+          notice: "Comment was successfully updated." 
+        end
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /comments/1 or /comments/1.json
-  # def destroy
-  #   @comment.destroy
+  def destroy
+    @comment.destroy
 
-  #   respond_to do |format|
-  #     format.html do
-  #       redirect_to post_path(id: @post.id), 
-  #       notice: "Comment was successfully destroyed." 
-  #     end
-  #     format.json { head :no_content }
-  #   end
-  # end
+    respond_to do |format|
+      format.html do
+        redirect_to post_path(id: @post.id), 
+        notice: "Comment was successfully destroyed." 
+      end
+      format.json { head :no_content }
+    end
+  end
 
   private
 
