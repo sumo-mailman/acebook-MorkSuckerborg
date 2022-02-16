@@ -13,7 +13,7 @@ RSpec.feature "Different users can like a post", type: :feature do
     submit_post
     click_button "0 Likes"
     log_out
-    sign_up_log_in_2
+    sign_up_log_in2
     click_button "1 Like"
     expect(page).to have_button("2 Likes")
   end

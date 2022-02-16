@@ -7,7 +7,7 @@ def sign_up_log_in
   click_button 'Sign up'
 end
 
-def sign_up_log_in_2
+def sign_up_log_in2
   visit "/users/sign_up"
   fill_in "Name", with: "Babs Boom"
   fill_in "Email", with: "babs@example.com"
