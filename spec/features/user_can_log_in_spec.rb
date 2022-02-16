@@ -14,6 +14,6 @@ feature 'Log in' do
     expect(page).to have_content 'Signed in successfully'
     expect(page).not_to have_button 'Sign up'
     expect(page).not_to have_button 'Log in'
-    expect(page).to have_button 'Log Out'
+    expect(page).to have_button 'Log out'
   end
 end
