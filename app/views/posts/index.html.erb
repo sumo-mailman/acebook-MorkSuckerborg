@@ -1,14 +1,7 @@
-<div class='enter-post'>    
-  <%= form_for @post do |form| %>
-    <%= form.label :message %>
+<h1> Main Feed </h1>
 
-    <%= form.text_field :message, placeholder: "What's on your mind?" %>
-    <%= form.submit "Submit" %>
-  <% end %>
-</div>
-
-<% @posts.each do |post| %>
-  <div class='post'>
+<% @posts.each_with_index do |post, index| %>
+  <div>
     <%= link_to post do %>
       <%= render post %>
     <% end %>
@@ -16,3 +9,4 @@
     <%= render 'post_likes/form', { post: post, post_like: post.post_likes.build } %>
   </div>
 <% end %>
+

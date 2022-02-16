@@ -32,3 +32,10 @@ notes.md
 # Ignore local cache of Rubocop remote config
 .rubocop-*
 
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

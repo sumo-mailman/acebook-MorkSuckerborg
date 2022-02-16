@@ -14,19 +14,28 @@
  *= require_self
  */
   body {
-    margin: 0px;
+    margin: 20px;
   }
 
- .navbar {
-  background-color: blue;
-  padding: 20px;
-  color: antiquewhite;
- }
+  h1 {
+    text-align:center;
+  }
 
- .navbar a {
+  .enter-post {
+    text-align:center;
+  }
+
+ #navbarLogo {
    color: antiquewhite;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-   font-size: xx-large;
+   font-size: x-large;
    text-decoration: none;
  }
  
+ #navbarUserDetails {
+  text-decoration: none;
+  color: antiquewhite;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+ }
+

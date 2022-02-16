@@ -3,12 +3,11 @@
     <%= link_to root_path do %>
       AceBook :]
     <% end %>
+  
+    <p class="navbar-text float-right" id="main-navbar">
+      Logged in as <strong><%= current_user.name %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link', id: "log-out-link"   %>
+    </p>
   </div>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li>
-      <%= button_to destroy_user_session_path, method: :delete do %>
-        Log Out
-      <% end %>  
-    </li>
-  </ul>
 </nav>
