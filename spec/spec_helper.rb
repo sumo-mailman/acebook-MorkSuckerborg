@@ -1,12 +1,18 @@
 require 'simplecov'
 require 'simplecov-console'
-require 'features/web_helpers.rb'
+require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
   SimpleCov::Formatter::HTMLFormatter
 ])
+
+SimpleCov.add_filter([
+  'app/channels',
+  'app/jobs',
+  'app/mailers'
+  ])
 
 SimpleCov.start 'rails'
 

@@ -2,13 +2,15 @@ require 'rails_helper'
 
 RSpec.feature "PostsAppearInReverseChronologicalOrders", type: :feature do
   scenario '3 posts appear from most recent on top' do
-    user = User.create(name: "Bob Bam", email: "bob@example.com", password: "Banana123")
+    user = User.create(name: "example_name", email: "example@example.com", password: "example123")
     post = Post.create(message: "The least recent", user_id: user.id)
     post = Post.create(message: "Less recent", user_id: user.id)
     post = Post.create(message: "Most recent", user_id: user.id)
 
-    visit '/'
+    sign_up_log_in
 
+    visit '/'
+    
     posts = page.all('.post')
 
     expect(posts.length).to eq 3
