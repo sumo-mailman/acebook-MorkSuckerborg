@@ -1,21 +1,25 @@
-<div class='enter-post'>    
-  <%= form_for @post do |form| %>
-    <%= form.label :message %>
+<h1> Main Feed </h1>
 
-    <%= form.text_field :message, placeholder: "What's on your mind?" %>
-    <%= form.submit "Submit" %>
-  <% end %>
+<div class='new_post'>
+  <div class='enter-post'>    
+    <%= form_for @post do |form| %>
+      <%= form.label :message %>
+      <%= form.text_field :message, placeholder: "What's on your mind?" %>
+      <%= form.submit "Submit" %>
+    <% end %>
+  </div>
 </div>
 
+<br>
+
 <% @posts.each do |post| %>
-  <%= link_to post do %>
-    <div class='post'>
-      <p class='post-user'><%= post.user.name if post.user %></p>
-      <p class='post-user'><%= "Namey McNamerson" unless post.user %></p>
-      <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-      <p class='post-message'><%= post.message %></p>
+    <div class='container card' style="width: 50rem;">
+        <span class="p-3">
+          <%= link_to post do %> <h5 class="post-title"><%= post.user.name if post.user %></h5> <% end %>
+          <p class="post-text"><small class="text-muted">Posted on: <%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
+          <p class="post-text"><%= post.message %></p>
+        </span>
     </div>
+  
+    <br>
   <% end %>
-<% end %>
-
-
