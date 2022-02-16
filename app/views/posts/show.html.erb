@@ -1,10 +1,13 @@
 <div class='post'> 
-  <p class='post-message'><%= @post.message %></p>
-  <p class='post-time'><%= @post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-  <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete %>
-  <%= link_to 'Edit', edit_post_path %>
+  <%= render @post %>
+
+  <% if current_user == @post.user %>
+    <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete %>
+    <%= link_to 'Edit', edit_post_path %>
+  <% end %>
+
+  <%= render 'comments/form', comment: @post.comments.build %>
+
+  <h3>Comments</h3>
+  <%= render @post.comments.order('created_at DESC') %>
 </div>
-
-
-
-

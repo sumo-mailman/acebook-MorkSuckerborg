@@ -8,14 +8,11 @@
 </div>
 
 <% @posts.each do |post| %>
-  <%= link_to post do %>
-    <div class='post'>
-      <p class='post-user'><%= post.user.name if post.user %></p>
-      <p class='post-user'><%= "Namey McNamerson" unless post.user %></p>
-      <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-      <p class='post-message'><%= post.message %></p>
-    </div>
-  <% end %>
+  <div class='post'>
+    <%= link_to post do %>
+      <%= render post %>
+    <% end %>
+    <%= link_to "#{pluralize(post.comments.count, "Comment")}", post %>
+    <%= render 'post_likes/form', { post: post, post_like: post.post_likes.build } %>
+  </div>
 <% end %>
-
-

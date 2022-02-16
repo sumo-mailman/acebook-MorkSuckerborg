@@ -1,0 +1,5 @@
+<div class='card' style="width: 50rem;">
+  <h5 class="post-title"><%= post.user.name if post.user %></h5>
+  <p class="post-text"><small class="text-muted">Posted on: <%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
+  <p class="post-text"><%= post.message %></p>
+</div>

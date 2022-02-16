@@ -1,35 +1,33 @@
-def sign_up
-  visit "/sign_up"
+def sign_up_log_in
+  visit "/users/sign_up"
   fill_in "Name", with: "Bob Bam"
   fill_in "Email", with: "bob@example.com"
   fill_in "Password", with: "Banana123"
-  click_button "Sign Up"
+  fill_in 'Password confirmation', with: "Banana123"
+  click_button 'Sign up'
 end
 
-def user_sign_up_and_log_in
-  visit '/'
-  click_link 'Sign up'
-
-  fill_in "Name", with: "Josh"
-  fill_in "Email", with: "Josh@gmail.com"
-  fill_in "Password", with: "password"
-  fill_in "Password confirmation", with: "password"
+def sign_up_log_in_2
+  visit "/users/sign_up"
+  fill_in "Name", with: "Babs Boom"
+  fill_in "Email", with: "babs@example.com"
+  fill_in "Password", with: "Orange456"
+  fill_in 'Password confirmation', with: "Orange456"
   click_button 'Sign up'
-end 
+end
 
-def user_sign_up_not_logged_in
+def log_out
   visit '/'
-  click_link 'Sign up'
-
-  fill_in "Name", with: "Josh"
-  fill_in "Email", with: "Josh@gmail.com"
-  fill_in "Password", with: "password"
-  fill_in "Password confirmation", with: "password"
-  click_button 'Sign up'
   click_button 'Log Out'
 end
 
-def submit_post
+def submit_post(image: false)
   fill_in "Message", with: "Hello, world!"
+  attach_file('post-image', './spec/fixtures/test-image.jpeg') if image
   click_button "Submit"
+end
+
+def submit_comment
+  fill_in "comment[content]", with: "Actually, I think you'll find..."
+  click_button "Create Comment"
 end
