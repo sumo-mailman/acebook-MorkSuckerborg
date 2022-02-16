@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'webpacker', '~> 5.0'  
+
 gem 'pry', require: false
 
 # Use Capistrano for deployment

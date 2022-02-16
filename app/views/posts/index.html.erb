@@ -1,24 +1,28 @@
-<div class='enter-post'>    
-  <%= form_for @post do |form| %>
-    <%= form.label :image %>
-    <%= form.file_field :image, class: "post-image", id: "post-image", accept: "image/png, image/jpeg" %>
-    <%= form.label :message %>
-
-    <%= form.text_field :message, placeholder: "What's on your mind?" %>
-    <%= form.submit "Submit" %>
-  <% end %>
+<h1> Main Feed </h1>
+<div class='new_post'>
+  <div class='enter-post'>
+    <%= form_for @post do |form| %>
+      <%= form.label :message %>
+      <%= form.text_field :message, placeholder: "What's on your mind?" %>
+      <%= form.label :image %>
+      <%= form.file_field :image, class: "post-image", id: "post-image", accept: "image/png, image/jpeg" %>
+      <%= form.submit "Submit" %>
+    <% end %>
+  </div>
 </div>
-
+<br>
 <% @posts.each_with_index do |post, index| %>
-  <%= link_to post, class: 'post-link' do %>
-    <div class='post'>
-      <p class='post-user'><%= post.user.name if post.user %></p>
-      <p class='post-user' id="post-user-<%= index %>" ><%= "Namey McNamerson" unless post.user %></p>
-      <p class='post-time' id="post-time-<%= index %>" ><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
-      <%= image_tag(post.image, id: "post-image-#{index}", style: "width: 50%;") if post.image.attached? %>
-      <p class='post-message', id="post-message-<%= index %>"><%= post.message %></p>
+  <div class='container card' style="width: 50rem;">
+    <div class="post">
+      <span class="p-3">
+        <%= link_to post, class: "post-link" do %> 
+          <h5 class="post-title" id="post-user-<%= index %>" ><%= post.user.name if post.user %></h5>
+ <% end %>
+        <p class="post-text" id="post-time-<%= index %>"><small class="text-muted">Posted on: <%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
+        <%= image_tag(post.image, id: "post-image-#{index}", style: "width: 50%;") if post.image.attached? %>
+        <p class="post-text", id="post-message-<%= index %>"><%= post.message %></p>
+      </span>
     </div>
-  <% end %>
+  </div>
+  <br>
 <% end %>
-
-
