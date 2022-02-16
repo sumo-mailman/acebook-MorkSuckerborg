@@ -19,8 +19,7 @@ RSpec.feature "Timeline", type: :feature do
     sign_up_log_in
     submit_post
 
-    post_links = page.all('.post-link')
-    post_links[0].click
+    click_link "0 Comments"
     click_link "Edit"
 
     attach_file('post-image', './spec/fixtures/test-image2.png')
@@ -29,7 +28,7 @@ RSpec.feature "Timeline", type: :feature do
     posts = page.all(".post")
     expect(posts.length).to eq 1
     expect(posts.first).to have_content("Hello, world!")
-    first_post_image = page.find('#post-image-0')['src']
+    first_post_image = page.find('.post-image')['src']
     expect(first_post_image).to match /.*\/test-image2.png/
 
   end
@@ -38,8 +37,7 @@ RSpec.feature "Timeline", type: :feature do
     sign_up_log_in
     submit_post(image: true)
 
-    post_links = page.all('.post-link')
-    post_links[0].click
+    click_link "0 Comments"
     click_link "Edit"
     click_link 'Delete image'
     

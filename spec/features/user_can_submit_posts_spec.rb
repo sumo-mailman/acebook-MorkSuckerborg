@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "User can submit a post", type: :feature do
   scenario "User sees the post content" do
     sign_up_log_in
     submit_post(image: true)
 
     posts = page.all('.post')
-    first_post_image = page.find('#post-image-0')['src']
+    first_post_image = page.find('.post-image')['src']
     
     expect(posts.length).to eq 1
     expect(posts.first).to have_content("Hello, world!")

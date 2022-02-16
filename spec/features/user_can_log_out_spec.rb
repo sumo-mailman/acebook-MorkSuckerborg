@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Log out' do
   scenario 'user logs out' do
     sign_up_log_in
+
     click_link "Log out"
 
     # replace bottom test with specific sign out message from yml

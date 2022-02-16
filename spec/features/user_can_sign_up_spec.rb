@@ -20,6 +20,7 @@ feature 'Sign up' do
     User.create(name: 'Josh', email: 'Josh@gmail.com', password: 'password')
 
     visit "/"
+
     sign_up_link = page.find('#sign-up-link')
     sign_up_link.click
 

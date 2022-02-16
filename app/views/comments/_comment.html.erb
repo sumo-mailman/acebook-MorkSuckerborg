@@ -1,0 +1,5 @@
+<div class='comment' style="width: 50rem;">
+  <h5 class="comment-title"><%= comment.user.name %></h5>
+  <p class="comment-text"><small class="text-muted">Posted on: <%= comment.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
+  <p class="comment-text"><%= comment.content %></p>
+</div>
