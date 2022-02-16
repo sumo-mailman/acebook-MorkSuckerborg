@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  resources :rooms
   resources :posts do
     member do
       delete :purge_image
@@ -7,4 +8,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'posts#index'
+
+  get 'user/:id', to: 'users#show', as: 'user'
 end
