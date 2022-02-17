@@ -4,10 +4,10 @@ feature 'Sign up' do
   scenario 'user signs up' do
     visit "/users/sign_up"
     
-    fill_in "Name", with: "Josh"
-    fill_in "Email", with: "Josh@gmail.com"
-    fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
+    fill_in "user[name]", with: "Josh"
+    fill_in "user[email]", with: "Josh@gmail.com"
+    fill_in "password[password]", with: "password"
+    fill_in "password[password_confirmation]", with: "password"
     click_button 'Sign up'
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
@@ -24,10 +24,10 @@ feature 'Sign up' do
     sign_up_link = page.find('#sign-up-link')
     sign_up_link.click
 
-    fill_in "Name", with: "Josh"
-    fill_in "Email", with: "Josh@gmail.com"
-    fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
+    fill_in "user[name]", with: "Josh"
+    fill_in "user[email]", with: "Josh@gmail.com"
+    fill_in "user[password]", with: "password"
+    fill_in "user[password_confirmation]", with: "password"
     click_button 'Sign up'
 
     expect(page).to have_content "Email has already been taken"

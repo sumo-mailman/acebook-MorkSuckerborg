@@ -1,18 +1,18 @@
 def sign_up_log_in
   visit "/users/sign_up"
-  fill_in "Name", with: "Bob Bam"
-  fill_in "Email", with: "bob@example.com"
-  fill_in "Password", with: "Banana123"
-  fill_in 'Password confirmation', with: "Banana123"
+  fill_in "user[name]", with: "Bob Bam"
+  fill_in "user[email]", with: "bob@example.com"
+  fill_in "user[password]", with: "Banana123"
+  fill_in 'user[password_confirmation]', with: "Banana123"
   click_button 'Sign up'
 end
 
 def sign_up_log_in2
   visit "/users/sign_up"
-  fill_in "Name", with: "Babs Boom"
-  fill_in "Email", with: "babs@example.com"
-  fill_in "Password", with: "Orange456"
-  fill_in 'Password confirmation', with: "Orange456"
+  fill_in "user[name]", with: "Babs Boom"
+  fill_in "user[email]", with: "babs@example.com"
+  fill_in "user[password]", with: "Orange456"
+  fill_in 'user[password_confirmation]', with: "Orange456"
   click_button 'Sign up'
 end
 
