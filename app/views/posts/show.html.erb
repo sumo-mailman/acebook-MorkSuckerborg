@@ -1,13 +1,22 @@
-<div> 
+<div class="container">
   <%= render @post %>
-
-  <% if current_user == @post.user %>
-    <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete %>
-    <%= link_to 'Edit', edit_post_path %>
-  <% end %>
-
-  <%= render 'comments/form', comment: @post.comments.build %>
-
-  <h3>Comments</h3>
-  <%= render @post.comments.order('created_at DESC') %>
+  <br>
+  <div class="row">
+    <div class="col">
+      <h3>Comments</h3>
+      <%= render 'comments/form', comment: @post.comments.build %>
+      <br>
+      <div class="row d-flex justify-content-center">
+        <div class="col-10">
+          <%= render @post.comments.order('created_at DESC') %>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <% if current_user == @post.user %>
+        <%= link_to 'Delete', @post, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Edit', edit_post_path, class: "btn btn-lg btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
