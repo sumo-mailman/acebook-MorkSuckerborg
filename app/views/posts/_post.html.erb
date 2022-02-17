@@ -26,7 +26,7 @@
 
   <div class="row rounded border d-flex justify-content-around position-relative bg-primary">
     <div class="col d-flex justify-content-around position-relative">
-      <%= link_to "Add comment", post, class: "stretched-link link-light text-decoration-none" %>
+      <%= link_to "Add comment", post, class: "btn btn-primary stretched-link link-light text-decoration-none" %>
     </div>
     <div class="col d-flex justify-content-around">
       <%= render 'post_likes/form', { post: post, post_like: post.post_likes.build } %>

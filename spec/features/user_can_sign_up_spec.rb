@@ -6,8 +6,8 @@ feature 'Sign up' do
     
     fill_in "user[name]", with: "Josh"
     fill_in "user[email]", with: "Josh@gmail.com"
-    fill_in "password[password]", with: "password"
-    fill_in "password[password_confirmation]", with: "password"
+    fill_in "user[password]", with: "password"
+    fill_in "user[password_confirmation]", with: "password"
     click_button 'Sign up'
 
     expect(page).to have_content 'Welcome! You have signed up successfully.'
@@ -19,10 +19,7 @@ feature 'Sign up' do
   scenario "user can't sign up with an existing email" do # still not implemented
     User.create(name: 'Josh', email: 'Josh@gmail.com', password: 'password')
 
-    visit "/"
-
-    sign_up_link = page.find('#sign-up-link')
-    sign_up_link.click
+    visit "/users/sign_up"
 
     fill_in "user[name]", with: "Josh"
     fill_in "user[email]", with: "Josh@gmail.com"
@@ -37,9 +34,9 @@ feature 'Sign up' do
   scenario 'password must be between 6 and 10 characters' do
     visit "/users/sign_up"
 
-    fill_in "Name", with: "Josh"
-    fill_in "Email", with: "matt@matt.com"
-    fill_in "Password", with: "1234"
+    fill_in "user[name]", with: "Josh"
+    fill_in "user[email]", with: "matt@matt.com"
+    fill_in "user[password]", with: "1234"
     find('input[name="commit"]').click
 
     expect(page).to have_content "Password is too short (minimum is 6 characters)"

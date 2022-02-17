@@ -4,8 +4,8 @@ RSpec.feature "User can delete a comment", type: :feature do
   scenario "Comment is no longer visible" do
     sign_up_log_in
     submit_post
-
-    click_link "0 Comments"
+    
+    visit "/posts/#{Post.all.last.id}"
     submit_comment
 
     find('.comment').click_link "Delete"

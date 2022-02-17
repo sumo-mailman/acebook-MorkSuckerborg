@@ -18,17 +18,17 @@ end
 
 def log_out
   visit '/'
-  log_out_link = page.find('#log-out-link')
+  log_out_link = page.find('.log-out-link')
   log_out_link.click
 end
 
 def submit_post(image: false)
   fill_in "post[message]", with: "Hello, world!"
-  attach_file('post-image-form', './spec/fixtures/test-image.jpeg') if image
+  attach_file('post[image]', './spec/fixtures/test-image.jpeg') if image
   click_button "Submit"
 end
 
 def submit_comment
   fill_in "comment[content]", with: "Actually, I think you'll find..."
-  click_button "Create Comment"
+  click_button "Add comment"
 end

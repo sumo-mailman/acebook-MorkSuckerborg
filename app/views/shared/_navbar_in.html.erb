@@ -7,7 +7,7 @@
     <p class="float-right" id="main-navbar">
       Logged in as <strong><%= current_user.name %></strong>.
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link', id: "navbarUserDetails" %> |
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link', id: "navbarUserDetails"   %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link log-out-link', id: "navbarUserDetails"   %>
     </p>
   </div>
 </nav>

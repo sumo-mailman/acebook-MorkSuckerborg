@@ -6,8 +6,8 @@ feature 'Log in' do
     
     visit '/'
     
-    fill_in "Email", with: 'mat@mat.com'
-    fill_in "Password", with: 'Ukulele'
+    fill_in "user[email]", with: 'mat@mat.com'
+    fill_in "user[password]", with: 'Ukulele'
     click_button 'Log in'
 
     expect(current_path).to eq '/'
