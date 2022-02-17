@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  margin: 20px;
+}
+
+h1 {
+  text-align:center;
+}
+
+
+#navbarLogo {
+  text-decoration: none;
+  color: white;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: x-large;
+}
+
+#editFormButtons {
+  text-align:center;
+}
+
+#main-navbar {
+text-decoration: none;
+color: antiquewhite;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: small;
+
+}
+#navbarUserDetails {
+text-decoration: none;
+color: antiquewhite;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: small;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+margin: 10;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}

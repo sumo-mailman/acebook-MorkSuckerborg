@@ -1,10 +1,31 @@
 <h1> Edit Post </h1>
 
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message, value: @post.message %>
-  <%= form.label :image %>
-  <%= form.file_field :image, class: "post-image", id: "post-image", accept: "image/png, image/jpeg" %>
-  <%= link_to "Delete image", purge_image_post_path(@post), method: :delete %>
-  <%= form.submit "Submit" %>
-<% end %>
+<div class='container card post' style="width: 50rem;">
+  <span class="p-3">
+    <%= form_for @post do |form| %>
+      <%= form.label :message %>
+
+    
+      <%= form.text_area :message, class: "form-control w-100", id: "exampleFormControlTextarea1", rows: "3", value: @post.message %> </div>
+      
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+        
+        <%= link_to "Delete image", purge_image_post_path(@post), class: "btn btn-sm btn-primary", method: :delete %> 
+        
+        or 
+    
+          <label class="btn btn-sm btn-primary"> Add image
+            <span style="display:none;">
+              <%= form.file_field :image, class: "post-image", id: "post-image", accept: "image/png, image/jpeg" %>
+            </span>
+          </label>
+
+        <li class="list-group-item" id="editFormButtons"><%= form.submit "Submit", class: "btn btn-sm btn-primary"%>
+        </li>
+      </ul> 
+    <% end %>
+ </span>
+</div>
+  
+  
