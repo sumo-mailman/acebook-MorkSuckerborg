@@ -29,6 +29,10 @@ gem 'webpacker', '~> 5.0'
 
 gem 'pry', require: false
 
+gem 'simple_form'
+
+gem 'redis'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

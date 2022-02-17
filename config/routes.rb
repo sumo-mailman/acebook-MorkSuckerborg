@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :room_messages
+  resources :rooms
   resources :posts do
     resources :comments
     resources :post_likes
