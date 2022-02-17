@@ -6,7 +6,7 @@ RSpec.feature "User can submit a post", type: :feature do
     submit_post(image: true)
 
     posts = page.all('.post')
-    first_post_image = page.find('.post-image')['src']
+    first_post_image = posts.first.find('img')['src']
     
     expect(posts.length).to eq 1
     expect(posts.first).to have_content("Hello, world!")

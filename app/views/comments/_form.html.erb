@@ -10,17 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :content, 'Leave a comment' %>
-    <br>
-    <%= form.text_area :content %>
+  <div class="row d-flex justify-content-center">
+  <div class="field mb-3 col-10">
+    <%= form.text_area :content, class: "form-control", id: "exampleFormControlTextarea1", rows: '3' %>
+  </div>
+  
   </div>
 
   <%= form.hidden_field :post_id, value: @post.id %>
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add comment", class: "btn btn-sm btn-primary" %>
   </div>
 <% end %>

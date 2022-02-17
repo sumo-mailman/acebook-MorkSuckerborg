@@ -1,10 +1,35 @@
-<div class='container card post' style="width: 50rem;">
-  <span class="p-3">
-    <div class="post-body">
-      <h5 class="post-title"><%= post.user.name if post.user%></h5>
-      <p class="post-text"><small class="text-muted">Posted on: <%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
-      <%= image_tag(post.image, class: "post-image", style: "width: 50%;") if post.image.attached? %>
-      <p class="post-text"><%= post.message %></p>
+<div class="container-card">
+  
+  
+  <div class="row border rounded shadow-sm h-md-250 position-relative justify-content-hidden overflow-auto", style="height: auto;  max-height: 350px;">
+    <div class="col-sm-5 p-4 d-flex flex-column position-static">
+      <div class="row text-left">
+        <strong class="d-inline-block mb-2 text-primary"><%= post.user.name %></strong>
+        <div class="mb-1 text-muted" style="font-size: 10px;">
+          Posted on: <%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %>
+        </div>
+        <%= link_to "See more", post, class: "stretched-link" %>
+      </div>
+      <div class="row">
+        <p class="card-text mb-auto"><%= post.message %></p>
+      </div>
     </div>
-  </span>
+    
+    <% if post.image.attached? %>
+      <div class="col-6 d-lg-block">
+        <%= image_tag(post.image, class: "img-fluid", alt: "Responsive image")%>
+      </div>
+    <% end %>
+  </div>
+
+
+
+  <div class="row rounded border d-flex justify-content-around position-relative bg-primary">
+    <div class="col d-flex justify-content-around position-relative">
+      <%= link_to "Add comment", post, class: "btn btn-primary stretched-link link-light text-decoration-none" %>
+    </div>
+    <div class="col d-flex justify-content-around">
+      <%= render 'post_likes/form', { post: post, post_like: post.post_likes.build } %>
+    </div>
+  </div>
 </div>

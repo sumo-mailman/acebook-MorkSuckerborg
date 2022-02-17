@@ -14,12 +14,14 @@
   <div class="field">
     <%= form.hidden_field :post_id, value: @post.id %>
   </div>
-
-  <div class="field">
+  <div class="row">
+  <div class="field col">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "#{pluralize(post.post_likes.count, "Like")}" %>
+  <div class="actions col">
+    <%= form.submit "#{pluralize(post.post_likes.count, "Like")}", class: "btn btn-sm btn-primary" %>
+  </div>
+    
   </div>
 <% end %>
