@@ -13,29 +13,3 @@
  *= require_tree .
  *= require_self
  */
-  body {
-    margin: 20px;
-  }
-
-  h1 {
-    text-align:center;
-  }
-
-  .enter-post {
-    text-align:center;
-  }
-
- #navbarLogo {
-   color: antiquewhite;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-   font-size: x-large;
-   text-decoration: none;
- }
- 
-  #navbarUserDetails {
-  text-decoration: none;
-  color: antiquewhite;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: small;
- }
-

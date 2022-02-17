@@ -1,9 +1,15 @@
-<div class='comment' style="width: 50rem;">
-  <h5 class="comment-title"><%= comment.user.name %></h5>
-  <p class="comment-text"><small class="text-muted">Posted on: <%= comment.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %> </small></p>
-  <p class="comment-text"><%= comment.content %></p>
-  <% if current_user == comment.user %>
+<div class='comment'>
+  <div class="d-flex comment-title text-muted border-bottom justify-content-between">
+    <div>
+      <%= comment.user.name %>
+    </div>
+    <div style="font-size: 12px;">
+      posted on: <%= comment.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %>
+     <% if current_user == comment.user %>
     <%= link_to 'Delete', post_comment_path(post_id: comment.post.id, id: comment.id), data: { confirm: "Are you sure?" }, :method => :delete %>
     <%= link_to 'Edit', edit_post_comment_path(post_id: comment.post.id, id: comment.id) %>
   <% end %>
+    </div>
+  </div>
+  <p class="comment-text text-left" style="text-align: left;"><%= comment.content %></p>
 </div>

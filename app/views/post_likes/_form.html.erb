@@ -20,6 +20,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "#{pluralize(post.post_likes.count, "Like")}" %>
+    <%= form.label "#{post.post_likes.count}" %>
+    <%= form.submit "Like", class: "btn btn-primary" %>
   </div>
 <% end %>
