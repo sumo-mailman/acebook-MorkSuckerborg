@@ -1,33 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  before(:each) do
+    user = User.create({ name: 'Bob', email: 'bob@example.com', password: 'Banana123' })
+    allow(controller).to receive(:authenticate_user!).and_return(true)
+    allow(controller).to receive(:current_user).and_return(user)
+  end
+
   describe "POST /" do
-    # need to have signed in user to create posts
-    pending it "redirects to the posts url" do
+    it "redirects to the posts url" do
       post :create, params: { post: { message: "Hello, world!", user_id: 13 } }
       expect(response).to redirect_to(posts_url)
     end
 
-    # need to have signed in user to create posts
-    pending it "creates a post" do
+    it "creates a post" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
 
   describe "GET /" do
-    pending it "responds with 200" do
+    it "responds with 200" do
       get :index
       expect(response).to have_http_status(200)
-      # We are not logged in so it redirects us to the sign_up page
-      # We wanna test whether we are redirected to root_path when we go to posts
-      
-      # expect(response).to redirect_to(root_path)
     end
   end
 
   describe "DELETE /" do
-    # need to have signed in user to create posts
     pending it "redirects to the posts url" do
       post :create, params: { post: { message: "Hello, world!", user_id: 13 } }
       delete :destroy, params: { id: post.id }
@@ -36,7 +35,7 @@ RSpec.describe PostsController, type: :controller do
 
     pending it "deletes a post" do
       post = Post.create({ message: "Hello, World!", user_id: 13 })
-      delete :destroy, params: { id: post.id }
+      delete :destroy, params: { post: { id: post.id } }
 
       expect(Post.exists?(post.id)).to be false
     end

@@ -1,16 +1,17 @@
 <div class="container text-center">
-  <h1> Main Feed </h1>
   <div class="row justify-content-center">
     <div class="col-5">
       <%= form_for @post do |form| %>
-        <%= form.text_area :message, class: 'form-control form-control-lg', id: "exampleFormControlTextarea1", rows: '3', placeholder: "What's on your mind?" %>
-        <div class="col-sm-5">
+        <%= form.text_area :message, class: 'form-control form-control-lg', id: "exampleFormControlTextarea1", rows: '2', placeholder: "What's on your mind, #{current_user.name.split.first}?" %>
+        <div>
           <%= form.file_field :image, class: "form-control form-control-sm post-image-form", id: "formFileSm", type: "file", accept: "image/png, image/jpeg" %>
         </div>
+        <br>
         <%= form.submit "Submit", class: "btn btn-outline-primary mb-10" %>
       <% end %>
     </div>
   </div>
+  <br>
   <br>
   <% @posts.each_with_index do |post, index| %>
     <div class="post">

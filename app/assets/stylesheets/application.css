@@ -14,24 +14,25 @@
  *= require_self
  */
 
- body {
-  margin: 20px;
+body {
+  margin: 0px;
 }
 
 h1 {
-  text-align:center;
+  text-align: center;
 }
 
 
 #navbarLogo {
   text-decoration: none;
   color: white;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- font-size: x-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
+  padding-left: 20px;
 }
 
 #editFormButtons {
-  text-align:center;
+  text-align: center;
 }
 
 #main-navbar {
@@ -39,8 +40,8 @@ text-decoration: none;
 color: antiquewhite;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 font-size: small;
-
 }
+
 #navbarUserDetails {
 text-decoration: none;
 color: antiquewhite;
@@ -51,7 +52,7 @@ font-size: small;
 .btn-file {
   position: relative;
   overflow: hidden;
-margin: 10;
+  margin: 10;
 }
 .btn-file input[type=file] {
   position: absolute;
@@ -67,4 +68,22 @@ margin: 10;
   background: white;
   cursor: inherit;
   display: block;
+}
+
+.right-nav {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.see-more {
+  opacity: 0%;
+  font-size: xx-small;
+}
+
+.like-button {
+  padding: 5px;
+}
+
+.post-image {
+  padding: 20px;
 }
