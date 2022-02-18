@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" id="navbarLogo" href="/">Acebook :]</a>
@@ -6,11 +5,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    
-    <div class="navbar-nav" id="navbarUserDetails">
-      <a class="nav-link" href="#"><%= link_to "Log in", new_user_session_path, :class => 'navbar-link', id: "navbarUserDetails"  %></a>
-      <a class="nav-link disabled"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', id: "navbarUserDetails"  %></a>
-    </div>
-    
+    <p class="float-right right-nav" id="main-navbar">
+    <%= link_to 'Log in', new_user_session_path, :class => 'navbar-link', id: "navbarUserDetails" %> |
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link log-out-link', id: "navbarUserDetails"   %>
+    </p>
   </div>
 </nav>

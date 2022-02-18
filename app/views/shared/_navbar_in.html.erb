@@ -1,11 +1,9 @@
-<nav class="navbar  navbar-expand-lg navbar-light bg-dark">
-  <div class="container-fluid navbar-text ">
-    <%= link_to root_path do %>
-      AceBook :]
-    <% end %>
-  
-    <p class="float-right" id="main-navbar">
-      Logged in as <strong><%= current_user.name %></strong>.
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" id="navbarLogo" href="/">Acebook :]</a>
+
+    <p class="float-right right-nav" id="main-navbar">
+      Logged in as <strong><%= current_user.name %>.</strong>
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link', id: "navbarUserDetails" %> |
       <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'navbar-link log-out-link', id: "navbarUserDetails"   %>
     </p>
