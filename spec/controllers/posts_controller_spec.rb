@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   before(:each) do
-    user = User.create({name: 'Bob', email: 'bob@example.com', password: 'Banana123'})
+    user = User.create({ name: 'Bob', email: 'bob@example.com', password: 'Banana123' })
     allow(controller).to receive(:authenticate_user!).and_return(true)
     allow(controller).to receive(:current_user).and_return(user)
   end
@@ -35,7 +35,7 @@ RSpec.describe PostsController, type: :controller do
 
     pending it "deletes a post" do
       post = Post.create({ message: "Hello, World!", user_id: 13 })
-      delete :destroy, params: { post: { id: post.id }}
+      delete :destroy, params: { post: { id: post.id } }
 
       expect(Post.exists?(post.id)).to be false
     end
