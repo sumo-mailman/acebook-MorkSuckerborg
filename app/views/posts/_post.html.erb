@@ -11,7 +11,7 @@
         <%= link_to "See more", post, class: "stretched-link" %>
       </div>
       <div class="row">
-        <p class="card-text mb-auto"><%= post.message %></p>
+        <p class="card-text mb-auto"><%= simple_format(post.message) %></p>
       </div>
     </div>
     
